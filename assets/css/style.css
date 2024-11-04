@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lora", "Merriweather", serif;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+hr {
+  border: 2px solid #2d3e50;
+  border-radius: 10em;
+  width: 100%;
+  margin: 1em 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+  background-color: #dbf9f4;
+  padding: 3em 0;
+  box-sizing: border-box;
+  display: flex;
+  gap: 15vw;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  display: flex;
+  height: 3em;
+  gap: 1.5em;
+  justify-content: start;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #2d3e50;
+}
+
+.logo img {
+  width: 3.8em;
+}
+
+#searchBookTitle {
+  width: 40vw;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+}
+
+#searchBookTitle:focus {
+  outline: none;
+}
+
+#searchSubmit {
+  padding: 10px;
+  border: none;
+  background-color: #dbf9f4;
+  transition: all ease-in 0.15s;
+}
+
+#searchSubmit:hover {
+  cursor: pointer;
+  color: #dbf9f4;
+  background-color: #2d3e50;
+  border-radius: 3px;
+}
+
+.card {
+  color: #2d3e50;
+  border-radius: 1em;
+  background-color: #ece1d3;
+  border: solid 2px #2d3e50;
+  box-shadow: 7px 7px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+main {
+  margin: 3em;
+  padding-inline: 3em;
+  width: 80%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 3em;
+}
+
+main section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#bookForm,
+#updateBookForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 100%;
+  align-items: start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#bookForm .form-group,
+#updateBookForm .form-group {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+#bookForm .form-group div,
+#updateBookForm .form-group div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+#bookForm .form-group div label,
+#updateBookForm .form-group div label {
+  font-weight: 900;
+}
+
+#bookForm input:-webkit-autofill,
+#updateBookForm input:-webkit-autofill,
+#searchBook input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important; /* Sesuaikan dengan warna teks */
+}
+
+main section form input,
+.modal section form input {
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+}
+
+main section form input:focus,
+.modal section form input:focus {
+  outline: none;
+}
+
+.checkbox-form {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.5em;
+}
+
+.checkbox-form label:hover {
+  cursor: pointer;
+}
+
+.checkbox-form input {
+  width: 2em;
+  outline: none;
+  border: none;
+}
+
+.checkbox-form input:hover {
+  cursor: pointer;
+}
+
+.buttonGroup {
+  align-self: flex-end;
+}
+
+#bookFormSubmit,
+#updateBookFormSubmit {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-block: 3em 0;
+  background-color: white;
+  transition: all ease-in 0.15s;
+}
+
+#bookFormSubmit:hover,
+#updateBookFormSubmit:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #2d3e50;
+}
+
+.books {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: start;
+  align-items: start;
+  gap: 3em;
+}
+
+.books .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+#incompleteBookList,
+#completeBookList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 1em;
+}
+
+#incompleteBookList .bookItem,
+#completeBookList .bookItem {
+  padding: 1em 1em;
+  display: flex;
+  flex-basis: 10em;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all ease-in-out 0.1s;
+}
+
+.bookButtonGroup button {
+  background: transparent;
+  border: none;
+  font-size: 1em;
+  border-radius: 0;
+  padding: 0.3em 0.5em;
+  transition: all ease-in-out 0.15s;
+}
+
+#incompleteBookList .bookItem:hover,
+#completeBookList .bookItem:hover,
+.bookButtonGroup button {
+  background-color: #2d3e50;
+  color: #ece1d3;
+  border-radius: 0.3em;
+  cursor: default;
+}
+
+.bookButtonGroup {
+  display: flex;
+  gap: 0.5em;
+  margin-block: 1em 0;
+  align-self: flex-end;
+}
+
+.bookButtonGroup button:hover {
+  color: #2d3e50;
+  background-color: #ece1d3;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  background-color: #dbf9f4;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-content: center;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#closeModal {
+  font-size: 2em;
+  background: transparent;
+  border: none;
+  color: #2d3e50;
+  transition: all ease-in-out 0.15s;
+}
+
+#closeModal:hover {
+  cursor: pointer;
+  color: rgb(255, 80, 80);
+}
+
+.modal section {
+  width: 60%;
+  align-self: center;
+}
+
+.modal form {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+
+  .logo h1 {
+    display: none;
+  }
+
+  .logo img {
+    width: 3em;
+  }
+
+  .buttonGroup {
+    align-self: center;
+  }
+
+  #incompleteBookList,
+  #completeBookList {
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #incompleteBookList .bookItem,
+  #completeBookList .bookItem {
+    flex-grow: 1;
+    max-width: 95%;
+  }
+
+  .modal section {
+    width: 60%;
+    align-self: center;
+  }
+}

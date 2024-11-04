@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <section class="logo">
+        <img src="assets/img/logo.png" alt="logo.png" />
+        <h1>Dibooking</h1>
+      </section>
+      <section>
+        <form id="searchBook" data-testid="searchBookForm">
+          <input
+            id="searchBookTitle"
+            type="text"
+            data-testid="searchBookFormTitleInput"
+            placeholder="Cari judul buku"
+          />
+          <button
+            id="searchSubmit"
+            type="submit"
+            data-testid="searchBookFormSubmitButton"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </section>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Tambah Buku Baru</h2>
+        <hr />
+        <form id="bookForm" data-testid="bookForm">
+          <div class="form-group">
+            <div>
+              <label for="bookFormTitle">Judul Buku</label>
+              <input
+                id="bookFormTitle"
+                type="text"
+                required
+                data-testid="bookFormTitleInput"
+                placeholder="Masukkan judul buku"
+              />
+            </div>
+            <div>
+              <label for="bookFormAuthor">Penulis Buku</label>
+              <input
+                id="bookFormAuthor"
+                type="text"
+                required
+                data-testid="bookFormAuthorInput"
+                placeholder="Masukkan penulis buku"
+              />
+            </div>
+            <div>
+              <label for="bookFormYear">Tahun Rilis Buku</label>
+              <input
+                id="bookFormYear"
+                type="number"
+                required
+                data-testid="bookFormYearInput"
+                placeholder="Masukkan tahun rilis buku"
+              />
+            </div>
+          </div>
+          <div class="checkbox-form">
+            <label for="bookFormIsComplete">Selesai dibaca</label>
+            <input
+              id="bookFormIsComplete"
+              type="checkbox"
+              data-testid="bookFormIsCompleteCheckbox"
+              value="isCompleted"
+            />
+          </div>
+          <div class="buttonGroup">
+            <button
+              id="bookFormSubmit"
+              type="submit"
+              data-testid="bookFormSubmitButton"
+            >
+              Masukkan Buku ke rak
+              <span id="isCompletedText">belum selesai dibaca</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <article class="books">
+        <section class="card">
+          <h2>Belum selesai dibaca</h2>
+          <hr />
+          <div id="incompleteBookList" data-testid="incompleteBookList"></div>
+        </section>
+
+        <section class="card">
+          <h2>Selesai dibaca</h2>
+          <hr />
+          <div id="completeBookList" data-testid="completeBookList"></div>
+        </section>
+      </article>
+    </main>
+    <footer><p>Dicoding Submission Task 2024&copy;</p></footer>
+
+    <div class="modal" id="updateBook">
+      <section class="card">
+        <div class="modal-header">
+          <h2>Update Book Details</h2>
+          <button id="closeModal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <hr />
+        <form id="updateBookForm" data-testid="updateBookForm">
+          <div class="form-group">
+            <div class="input-group">
+              <label for="updateBookTitle">Judul Buku</label>
+              <input
+                id="updateBookTitle"
+                type="text"
+                required
+                data-testid="updateBookFormTitleInput"
+                placeholder="Masukkan judul buku"
+              />
+            </div>
+            <div class="input-group">
+              <label for="updateBookAuthor">Penulis Buku</label>
+              <input
+                id="updateBookAuthor"
+                type="text"
+                required
+                data-testid="updateBookFormAuthorInput"
+                placeholder="Masukkan penulis buku"
+              />
+            </div>
+            <div class="input-group">
+              <label for="updateBookYear">Tahun Rilis Buku</label>
+              <input
+                id="updateBookYear"
+                type="number"
+                required
+                data-testid="updateBookFormYearInput"
+                placeholder="Masukkan tahun rilis buku"
+              />
+            </div>
+          </div>
+          <div class="checkbox-form">
+            <label for="updateBookIsComplete">Selesai dibaca</label>
+            <input
+              id="updateBookIsComplete"
+              type="checkbox"
+              data-testid="updateBookFormIsCompleteCheckbox"
+              value="isCompleted"
+            />
+          </div>
+          <div class="buttonGroup">
+            <button
+              id="updateBookFormSubmit"
+              type="submit"
+              data-testid="updateBookFormSubmitButton"
+            >
+              Update Buku
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
